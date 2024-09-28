@@ -380,7 +380,7 @@ import AVFoundation
     /// 
     @objc open var linkTextAttributes: [NSAttributedString.Key : Any] = NSTextLayoutManager.linkRenderingAttributes {
         didSet {
-            textLayoutManager.invalidateRenderingAttributes(for: textContentManager.documentRange)
+            textLayoutManager.invalidateLayout(for: textContentManager.documentRange)
         }
     }
     
