@@ -378,7 +378,12 @@ import AVFoundation
     /// The attributes used to draw link text.
     ///
     /// 
-    @objc open var linkTextAttributes: [NSAttributedString.Key : Any] = NSTextLayoutManager.linkRenderingAttributes
+    @objc open var linkTextAttributes: [NSAttributedString.Key : Any] = NSTextLayoutManager.linkRenderingAttributes {
+        didSet {
+            textLayoutManager.invalidateRenderingAttributes(for: textContentManager.documentRange)
+        }
+    }
+    
    
     /// A flag
     internal var processingKeyEvent: Bool = false
