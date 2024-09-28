@@ -5,6 +5,10 @@ import AppKit
 
 extension STTextView: NSTextLayoutManagerDelegate {
 
+    public func textLayoutManager(_ textLayoutManager: NSTextLayoutManager, renderingAttributesForLink link: Any, at location: NSTextLocation, defaultAttributes renderingAttributes: [NSAttributedString.Key : Any] = [:]) -> [NSAttributedString.Key : Any]? {
+        return linkTextAttributes
+    }
+
     public func textLayoutManager(_ textLayoutManager: NSTextLayoutManager, textLayoutFragmentFor location: NSTextLocation, in textElement: NSTextElement) -> NSTextLayoutFragment {
         let textLayoutFragment = STTextLayoutFragment(
             textElement: textElement,
