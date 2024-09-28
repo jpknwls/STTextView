@@ -375,6 +375,11 @@ import AVFoundation
     /// Text color, background color, and underline are the only supported attributes for marked text.
     @objc open var markedTextAttributes: [NSAttributedString.Key : Any] = [.underlineStyle: NSUnderlineStyle.single.rawValue]
 
+    /// The attributes used to draw link text.
+    ///
+    /// 
+    @objc open var linkTextAttributes: [NSAttributedString.Key : Any] = NSTextLayoutManager.linkRenderingAttributes
+   
     /// A flag
     internal var processingKeyEvent: Bool = false
 
